@@ -1,0 +1,15 @@
+[Unit]
+Description=A milter service for rewriting external e-mail bodies
+After=network.target auditd.service
+
+[Service]
+ExecStart=/usr/local/bin/urlmilter \
+	--proto tcp \
+	--addr localhost:1234
+KillMode=process
+Restart=on-failure
+
+DynamicUser=yes
+
+[Install]
+WantedBy=multi-user.target

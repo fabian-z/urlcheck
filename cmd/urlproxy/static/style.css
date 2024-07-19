@@ -1,0 +1,135 @@
+/* CSS code for styling the web page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #112652;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Center the container vertically */
+    justify-content: center; /* Center the container horizontally */
+    min-height: 100vh; /* Use viewport height instead of 100% */
+}
+
+.container {
+    max-width: 800px;
+    padding: 20px;
+    box-shadow: 0 0 15px 10px rgba(255,255,255,0.25);
+    background-color: white;
+}
+.logo {
+    width: 200px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff0000;
+    margin-top: 20px;
+}
+
+.message {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.warning {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.buttons a {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  background-color: #cccccc;
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: none;
+  color: #000;
+}
+
+.buttons a:visited {
+    color: #000;
+}
+
+.buttons a:hover {
+    color: #fff;
+}
+
+.buttons a:last-child {
+    margin-right: 0;
+}
+
+.accent:hover {
+    background-color: #de5200;
+    color: white;
+}
+
+.language-switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.language-switcher span {
+    margin-right: 10px;
+}
+
+.language-switcher button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #cccccc;
+    color: black;
+    margin-right: 10px;
+}
+
+
+.language-switcher button:last-child {
+    margin-right: 0;
+}
+
+.language-switcher button.active {
+    background-color: #de5200;
+    color: white;
+}
+
+/* CSS code for the url class */
+.url {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+
+  
+}
+
+.urldisplay {
+    color: #ff0000;
+    font-weight: bold;
+    max-width: 300px;
+    display: inline-block;
+    overflow-x: auto;
+    white-space: nowrap;
+    position:relative; 
+    top: 3px;
+}

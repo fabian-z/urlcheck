@@ -1,0 +1,71 @@
+[Unit]
+Description=URLCheck server
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+
+# You may prefer to use a different user or group on your system.
+User=www-data
+Group=www-data
+
+# EnvironmentFile must contain SB_API_KEY
+# like SB_API_KEY=correcthorsebatterystaple
+EnvironmentFile=/etc/urlcheck.conf
+
+ExecStart=/opt/urlcheck/urlproxy
+WorkingDirectory=/opt/urlcheck
+Restart=always
+RestartSec=5
+
+# Makes created files group-readable, but inaccessible by others
+UMask=027
+
+# If your system doesn't support all of the features below (e.g. because of
+# the use of an older version of systemd), you may wish to comment-out
+# some of the lines below as appropriate.
+CapabilityBoundingSet=
+LockPersonality=true
+MemoryDenyWriteExecute=true
+NoNewPrivileges=yes
+
+#PrivateNetwork=yes
+PrivateTmp=yes
+PrivateDevices=true
+PrivateUsers=true
+ProtectSystem=strict
+ProtectHome=yes
+ProtectClock=true
+ProtectControlGroups=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectProc=invisible
+ProtectHostname=true
+RemoveIPC=true
+RestrictNamespaces=true
+#RestrictAddressFamilies=none
+RestrictSUIDSGID=true
+RestrictRealtime=true
+# if your service crashes with "code=killed, status=31/SYS", you probably tried to run linux_i386 (32bit) binary on a amd64 host
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+
+# Additionally, you may wish to use some of the systemd options documented in
+# systemd.resource-control(5) to limit the CPU, memory, file-system I/O and
+# network I/O that the rest-server is permitted to consume according to the
+# individual requirements of your installation.
+#CPUQuota=25%
+#MemoryHigh=bytes
+#MemoryMax=bytes
+#MemorySwapMax=bytes
+#TasksMax=N
+#IOReadBandwidthMax=device bytes
+#IOWriteBandwidthMax=device bytes
+#IOReadIOPSMax=device IOPS, IOWriteIOPSMax=device IOPS
+#IPAccounting=true
+#IPAddressAllow=
+
+[Install]
+WantedBy=multi-user.target

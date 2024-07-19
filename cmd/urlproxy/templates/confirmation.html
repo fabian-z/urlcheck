@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Link to the external CSS file -->
+    <title>Warning</title>
+    <title lang="en">Warning</title>
+    <title lang="de">Warnung</title>
+    <title lang="zh">警告</title>
+    
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="referrer" content="no-referrer">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo of the company -->
+        <img src="/static/logo.svg" alt="Logo" class="logo">
+
+        <!-- Warning title -->
+        <h1 class="title" lang="en">Warning</h1>
+        <h1 class="title" lang="de" hidden>Warnung</h1>
+        <h1 class="title" lang="zh" hidden>警告</h1>
+
+        <!-- Message to the user -->
+        <p class="message" lang="en">You are about to leave our secured infrastructure and access an external link that may not be secure. Please proceed with caution.</p>
+        <p class="message" lang="de" hidden>Sie sind dabei, unsere sichere Infrastruktur zu verlassen und auf einen externen Link zuzugreifen, der möglicherweise nicht sicher ist. Bitte gehen Sie mit Vorsicht vor.</p>
+        <p class="message" lang="zh" hidden>您即将离开我们的安全基础设施，访问一个可能不安全的外部链接。请谨慎操作。</p>
+
+        <!-- URL to be visited -->
+        <p class="url" lang="en">You are going to visit: <span class="urldisplay">{{ .URL }}</span></p>
+        <p class="url" lang="de" hidden>Sie werden besuchen: <span class="urldisplay">{{ .URL }}</span></p>
+        <p class="url" lang="zh" hidden>您将访问: <span class="urldisplay">{{ .URL }}</span></p>
+
+        <!-- Buttons for canceling or continuing -->
+        <div class="buttons">
+            <a id="cancel" class="accent" href="https://konrad-technologies.com">Cancel</a>
+            <a id="continue" class="accent" href="{{.URL}}">Continue</a>
+        </div>
+        
+        <!-- Language switcher -->
+        <div class="language-switcher">
+            <button id="en" class="active">English</button>
+            <button id="de">Deutsch</button>
+            <button id="zh">中文</button>
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
